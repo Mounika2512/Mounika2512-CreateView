@@ -1,5 +1,3 @@
-
-
 import Util.ConnectionUtil;
 import Util.FileUtil;
 
@@ -71,6 +69,7 @@ public class CreateAView {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            sql=String.format("create view firstname_lastname as select firstname,lastname from site_user ");
             s.executeUpdate(sql);
 
         } catch (SQLException e) {
